@@ -1,0 +1,194 @@
+/*Стили для страницы Studio*/
+@import '../utils/variables';
+@import '../utils/placeholders';
+@import '../components/logo';
+@import '../components/page-header';
+@import '../components/button-links';
+@import '../components/footer';
+@import '../components/social-links';
+@import '../components/modal+backdrop';
+
+/*Стили для Героя*/
+
+.hero {
+  text-align: center;
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url('../images/hero-img.jpg');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &-title {
+    width: 646px;
+    margin-top: 0px;
+    margin-bottom: 38px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 200px;
+
+    color: $primaryBgColor;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+/*Стили для Преимуществ студии*/
+
+.benefits-list {
+  display: flex;
+  & .item + .item {
+    margin-left: 30px;
+  }
+  & .item {
+    min-width: 270px;
+  }
+}
+.benefit-icon {
+  display: block;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  min-width: 270px;
+  height: 120px;
+
+  background-color: $secondaryBgColor;
+  border-radius: $mainBorderRadius;
+}
+.benefits > .container {
+  border-bottom: 1px solid #ececec;
+}
+.benefits h3 {
+  margin: 0 0 10px 0;
+
+  color: $secondaryTextColor;
+}
+
+.benefits p {
+  margin: 0px;
+  color: $primaryTextColor;
+  line-height: 1.71;
+}
+
+/*Стили Направления разработки*/
+.services-list {
+  display: flex;
+
+  & .item {
+    position: relative;
+    width: 370px;
+  }
+
+  & .item + .item {
+    margin-left: 30px;
+  }
+
+  & h3 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    padding-top: 27px;
+    padding-bottom: 27px;
+
+    text-align: center;
+    background: rgba(47, 48, 58, 0.8);
+  }
+}
+
+/*Стили для Наша команда*/
+.team {
+  background: $secondaryBgColor;
+}
+.team-list {
+  display: flex;
+}
+
+.member {
+  min-width: 270px;
+  background: $primaryBgColor;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: $mainBorderRadius;
+  overflow: hidden;
+  .team-list & + & {
+    margin-left: 30px;
+  }
+}
+
+.member h3 {
+  margin-bottom: 10px;
+
+  color: $secondaryTextColor;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  text-transform: none;
+  text-align: center;
+}
+.member p {
+  margin: 0;
+  margin-bottom: 16px;
+
+  color: $primaryTextColor;
+  font-weight: $mainFontWeight;
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+}
+.team-photo {
+  display: block;
+  margin-bottom: 30px;
+
+  border-radius: 4px 4px 0px 0px;
+}
+.member > .socials-list {
+  @extend %socialsFlexDisplay;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/*Стили для секции постоянные клиенты*/
+.customers-list {
+  display: flex;
+  justify-content: space-between;
+}
+.customers-list .client-tittle {
+  margin-left: 30px;
+}
+.client-link {
+  display: flex;
+  justify-content: center;
+
+  color: #afb1b8;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: $mainBorderRadius;
+
+  min-width: 170px;
+  height: 90px;
+
+  transition: border-color $mainTransition, color $mainTransition;
+
+  &:hover,
+  &:focus {
+    border-color: $primaryHoverColor;
+    color: $primaryHoverColor;
+  }
+}
+.client-icon {
+  margin: auto;
+  fill: currentColor;
+}

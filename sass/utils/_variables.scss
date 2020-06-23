@@ -1,0 +1,80 @@
+$primaryBgColor: #ffffff;
+$secondaryBgColor: #f5f4fa;
+$primaryTextColor: #757575;
+$primaryHoverColor: #2196f3;
+$secondaryTextColor: #212121;
+$footerBgColor: #2f303a;
+$mainFontFamily: 'Roboto', sans-serif;
+$logoFontFamily: 'Raleway', sans-serif;
+$mainFontStyle: normal;
+$mainFontWeight: 400;
+$headingFontWeight: 700;
+$mainFontSize: 14px;
+$mainLineHeight: 1.14;
+$mainLetterSpacing: 0.03em;
+$mainBorderRadius: 4px;
+$halfBorderRadius: 50%;
+$mainTransition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+body {
+  background-color: $primaryBgColor;
+
+  font-family: $mainFontFamily;
+  font-style: $mainFontStyle;
+  font-weight: $mainFontWeight;
+  font-size: $mainFontSize;
+  line-height: $mainLineHeight;
+  letter-spacing: $mainLetterSpacing;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 0;
+
+  color: $secondaryTextColor;
+  font-weight: $headingFontWeight;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+
+  color: $primaryBgColor;
+  text-transform: uppercase;
+  font-weight: $headingFontWeight;
+  font-size: $mainFontSize;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

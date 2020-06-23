@@ -1,0 +1,21 @@
+.logo {
+  display: inline-block;
+  margin-right: 80px;
+
+  font-family: $logoFontFamily;
+  color: $primaryHoverColor;
+  font-weight: $headingFontWeight;
+  font-size: 26px;
+  line-height: 1.19;
+  text-decoration: none;
+  & span {
+    color: black; /*На макете текст Studio  реально темнее чем текст на всей странице*/
+  }
+
+  & .footer-logo-part {
+    color: $primaryBgColor;
+  }
+  footer & {
+    margin-bottom: 20px;
+  }
+}

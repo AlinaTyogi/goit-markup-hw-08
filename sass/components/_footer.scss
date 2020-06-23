@@ -1,0 +1,96 @@
+/*Стили для footer*/
+
+footer {
+  background-color: $footerBgColor;
+  & .title {
+    margin-bottom: 21px;
+  }
+}
+
+b {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: $headingFontWeight;
+  font-size: $mainFontSize;
+}
+.footer-flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  padding-top: 48px;
+  padding-bottom: 0px;
+}
+
+/*Footer contacts*/
+
+.footer-contacts {
+  margin-bottom: 28px;
+  margin-right: 69px;
+}
+
+.adress-location {
+  margin-bottom: 9px;
+
+  color: $secondaryBgColor;
+  font-style: $mainFontStyle;
+  line-height: 1.71;
+}
+
+.adress-contacts-item {
+  display: block;
+  margin-bottom: 9px;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: $mainFontStyle;
+  line-height: 1.71;
+  text-decoration: none;
+}
+
+/*Footer social media*/
+
+.socials-list {
+  @extend %socialsFlexDisplay;
+}
+.socials-item:not(:nth-last-child(1)) {
+  margin-right: 10px;
+}
+
+/*Footer signup*/
+
+.subscribe {
+  margin-left: auto;
+
+  &-icon {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+.footer-form {
+  display: flex;
+  width: 570px;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & > .link-button {
+    @extend %headerDisplayFlexProperties;
+  }
+
+  & input[type='email'] {
+    min-width: 358px;
+    height: 50px;
+    margin-right: 12px;
+    padding: 12px 16px;
+
+    background: inherit;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: $mainBorderRadius;
+    outline: none;
+
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}

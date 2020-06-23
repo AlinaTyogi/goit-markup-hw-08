@@ -1,0 +1,14 @@
+%headerDisplayFlexProperties {
+  display: flex;
+  align-items: center;
+}
+%socialsFlexDisplay {
+  display: flex;
+  align-content: space-between;
+  min-width: 270px;
+}
+
+%modalInputText {
+  letter-spacing: 0.01em;
+  color: $primaryTextColor;
+}

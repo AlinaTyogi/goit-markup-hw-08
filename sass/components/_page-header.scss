@@ -1,0 +1,101 @@
+/*Стили для header*/
+
+.header-flex {
+  @extend .container;
+  @extend %headerDisplayFlexProperties;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.menu {
+  @extend %headerDisplayFlexProperties;
+}
+.menu-list {
+  @extend %headerDisplayFlexProperties;
+}
+.menu-item {
+  position: relative;
+
+  .menu-list &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.menu-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-bottom: 0px;
+
+  color: $secondaryTextColor;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  transition: color $mainTransition;
+
+  &:hover,
+  &:focus {
+    color: $primaryHoverColor;
+  }
+  &-current {
+    color: $primaryHoverColor;
+  }
+  &-current::before {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -2.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 6px);
+    height: 4px;
+
+    background-color: $primaryHoverColor;
+    border-radius: 2px;
+  }
+}
+
+.menu-contacts {
+  @extend %headerDisplayFlexProperties;
+  margin-left: auto;
+
+  & .contact-item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.contact-link {
+  @extend %headerDisplayFlexProperties;
+  margin-bottom: 0px;
+  color: $primaryTextColor;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color $mainTransition;
+
+  &:hover,
+  &:focus {
+    color: $primaryHoverColor;
+  }
+}
+
+.contact-icon {
+  margin-right: 10px;
+  fill: currentColor;
+
+  transition: fill $mainTransition;
+
+  &:hover {
+    fill: $primaryHoverColor;
+  }
+}
+
+/* нижняя граница для Хедер в Портфолио */
+.page-header-accent {
+  border-bottom: 1px solid #ececec;
+}
