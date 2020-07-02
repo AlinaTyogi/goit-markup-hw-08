@@ -11,11 +11,42 @@
 /*Стили для Героя*/
 
 .hero {
-  text-align: center;
-  max-width: 1600px;
-  height: 600px;
+  max-width: 480px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
+  &-title {
+    max-width: 360px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 118px;
+
+    color: $primaryBgColor;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.62;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    & .menu-container.is-open {
+      display: none;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 600px;
+      width: 1600px;
+      line-height: 1.36;
+      font-size: 44px;
+      width: 646px;
+      margin-bottom: 38px;
+      padding-top: 200px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+  }
+
+  text-align: center;
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.8),
       rgba(47, 48, 58, 0.8)
@@ -25,44 +56,50 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  &-title {
-    width: 646px;
-    margin-top: 0px;
-    margin-bottom: 38px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 200px;
-
-    color: $primaryBgColor;
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
-    text-align: center;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
 }
 
 /*Стили для Преимуществ студии*/
 
 .benefits-list {
-  display: flex;
-  & .item + .item {
-    margin-left: 30px;
-  }
+  text-align: center;
   & .item {
-    min-width: 270px;
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+  & p {
+    text-align: start;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    & .item + .item {
+      margin-left: 30px;
+    }
+    & .item {
+      min-width: 270px;
+    }
   }
 }
+
 .benefit-icon {
   display: block;
   padding-top: 25px;
   padding-bottom: 25px;
   margin-bottom: 30px;
-  min-width: 270px;
   height: 120px;
+  width: 100%;
 
+  @media screen and (min-width: $tablet) {
+    max-width: 354px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 270px;
+  }
   background-color: $secondaryBgColor;
   border-radius: $mainBorderRadius;
 }
@@ -76,12 +113,19 @@
 }
 
 .benefits p {
+  max-width: 450px;
   margin: 0px;
   color: $primaryTextColor;
   line-height: 1.71;
 }
 
 /*Стили Направления разработки*/
+.services {
+  @media screen and (max-width: $desktop) {
+    display: none;
+  }
+}
+
 .services-list {
   display: flex;
 
@@ -113,19 +157,35 @@
   background: $secondaryBgColor;
 }
 .team-list {
-  display: flex;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
 }
 
 .member {
-  min-width: 270px;
+  max-width: 450px;
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-width: 354px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    min-width: 270px;
+    .team-list & + & {
+      margin-left: 30px;
+    }
+  }
   background: $primaryBgColor;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: $mainBorderRadius;
   overflow: hidden;
-  .team-list & + & {
-    margin-left: 30px;
-  }
 }
 
 .member h3 {
@@ -163,22 +223,47 @@
 /*Стили для секции постоянные клиенты*/
 .customers-list {
   display: flex;
-  justify-content: space-between;
+  max-width: 450px;
+
+  flex-wrap: wrap;
+  margin: -15px;
+
+  @media screen and (max-width: 767px) {
+    & .client-tittle {
+      width: calc((100% - 4 * 15px) / 2);
+      margin: 15px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-width: 354px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    justify-content: space-between;
+    & .client-tittle {
+      margin-left: 30px;
+    }
+  }
 }
-.customers-list .client-tittle {
-  margin-left: 30px;
-}
+
 .client-link {
   display: flex;
   justify-content: center;
+  max-width: 210px;
 
   color: #afb1b8;
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: $mainBorderRadius;
-
-  min-width: 170px;
   height: 90px;
+
+  @media screen and (min-width: $tablet) {
+    min-width: 226px;
+  }
+  @media screen and (min-width: $desktop) {
+    min-width: 170px;
+  }
 
   transition: border-color $mainTransition, color $mainTransition;
 
@@ -186,6 +271,7 @@
   &:focus {
     border-color: $primaryHoverColor;
     color: $primaryHoverColor;
+    outline: none;
   }
 }
 .client-icon {
