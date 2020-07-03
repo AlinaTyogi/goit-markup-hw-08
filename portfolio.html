@@ -17,9 +17,9 @@
   </head>
   <body>
     <!-- Шапка страницы -->
-    <header class="page-header">
+    <header class="page-header page-header-accent">
       <div class="header-flex container">
-        <nav class="menu">
+        <div class="adaptive-header">
           <a class="logo" href="./index.html"> Web <span>Studio</span></a>
           <button
             type="button"
@@ -44,8 +44,9 @@
               ></use>
             </svg>
           </button>
-
-          <ul class="menu-list" id="menu-container" data-menu>
+        </div>
+        <div class="menu-container" id="menu-container" data-menu>
+          <ul class="menu-list">
             <li class="menu-item">
               <a class="menu-link" href="./index.html">Студия</a>
             </li>
@@ -58,27 +59,28 @@
               <a class="menu-link" href="#">Контакты</a>
             </li>
           </ul>
-        </nav>
-        <ul class="menu-contacts">
-          <li class="contact-item">
-            <a class="contact-link" href="mailto:info@devstudio.com">
-              <svg class="contact-icon" width="16" height="11">
-                <use href="./images/sprite.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-          <li class="contact-item">
-            <a class="contact-link" href="tel:380961111111">
-              <svg class="contact-icon" width="10" height="15">
-                <use href="./images/sprite.svg#icon-telephone"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
+          <ul class="menu-contacts">
+            <li class="contact-item">
+              <a class="contact-link" href="mailto:info@devstudio.com">
+                <svg class="contact-icon" width="16" height="11">
+                  <use href="./images/sprite.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com
+              </a>
+            </li>
+            <li class="contact-item">
+              <a class="contact-link" href="tel:380961111111">
+                <svg class="contact-icon" width="10" height="15">
+                  <use href="./images/sprite.svg#icon-telephone"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
+
     <!--Основной контент страницы-->
     <main>
       <!-- Фильтры работ -->
@@ -322,7 +324,7 @@
         <!--Социальные сети-->
         <div class="socials">
           <h2 class="visually-hidden">Ссылки на социальные сети студии</h2>
-          <h3 class="title"><b>присоединяйтесь</b></h3>
+          <h3><b>присоединяйтесь</b></h3>
           <ul class="socials-list">
             <li class="socials-item">
               <a

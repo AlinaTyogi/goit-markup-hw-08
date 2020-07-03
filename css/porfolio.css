@@ -389,8 +389,8 @@ section {
 }
 
 .menu-link {
-  position: relative;
   display: inline-block;
+  position: relative;
   color: #212121;
   font-size: 18px;
   line-height: 1.17;
@@ -441,6 +441,7 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    max-width: 100vw;
   }
   .menu-contacts .contact-item:not(:last-child) {
     margin-bottom: 16px;
@@ -753,7 +754,7 @@ b {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.16;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -775,26 +776,47 @@ b {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-bottom: 40px;
 }
 
 .filters .item:not(:last-child) {
   margin-right: 8px;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1200px) {
+  .filters {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*Примеры работ*/
 .work-examples {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: -15px;
+  display: block;
+}
+
+@media screen and (min-width: 1200px) {
+  .work-examples {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .work-examples h2 {
@@ -815,10 +837,23 @@ b {
 }
 
 .example {
-  width: 370px;
-  margin: 15px;
+  display: block;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .example {
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (width: 1200px) {
+  .example {
+    max-width: 370px;
+    margin: 15px;
+  }
 }
 
 .work-link {
@@ -866,7 +901,7 @@ b {
 .overlay {
   position: relative;
   overflow: hidden;
-  width: 370px;
+  width: 100%;
   height: 294px;
 }
 

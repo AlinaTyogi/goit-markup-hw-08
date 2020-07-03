@@ -9,22 +9,33 @@
 
 .filters {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-  margin-left: auto;
-  margin-right: auto;
-
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-bottom: 40px;
   & .item:not(:last-child) {
     margin-right: 8px;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /*Примеры работ*/
 
 .work-examples {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -15px;
+  display: block;
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .work-examples h2 {
@@ -45,11 +56,19 @@
 }
 
 .example {
-  width: 370px;
-  margin: 15px;
+  display: block;
 
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  @media screen and (max-width: 767px) {
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+  @media screen and (width: $desktop) {
+    max-width: 370px;
+    margin: 15px;
+  }
 }
 .work-link {
   display: block;
@@ -91,7 +110,7 @@
 .overlay {
   position: relative;
   overflow: hidden;
-  width: 370px;
+  width: 100%;
   height: 294px;
 }
 

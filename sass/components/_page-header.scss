@@ -113,9 +113,8 @@
 }
 
 .menu-link {
-  position: relative;
   display: inline-block;
-
+  position: relative;
   color: $secondaryTextColor;
   font-size: 18px;
   line-height: 1.17;
@@ -160,6 +159,7 @@
   @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: column;
+    max-width: 100vw;
     & .contact-item:not(:last-child) {
       margin-bottom: 16px;
     }
@@ -222,7 +222,3 @@
 .page-header-accent {
   border-bottom: 1px solid #ececec;
 }
-
-// & .contact-item:not(:last-child) {
-//   margin-right: 50px;
-// }
