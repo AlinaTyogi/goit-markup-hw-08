@@ -11,10 +11,18 @@
 /*Стили для Героя*/
 
 .hero {
-  max-width: 480px;
+  max-width: $mobile;
   height: 400px;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 600px;
+    max-width: 1600px;
+  }
   &-title {
     max-width: 360px;
     margin-top: 0px;
@@ -30,20 +38,14 @@
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    & .menu-container.is-open {
-      display: none;
-    }
+
     @media screen and (min-width: $desktop) {
-      height: 600px;
-      width: 1600px;
       line-height: 1.36;
       font-size: 44px;
-      width: 646px;
+      max-width: 646px;
       margin-bottom: 38px;
       padding-top: 200px;
     }
-  }
-  @media screen and (min-width: $desktop) {
   }
 
   text-align: center;
@@ -61,26 +63,42 @@
 /*Стили для Преимуществ студии*/
 
 .benefits-list {
-  text-align: center;
-  & .item {
-    max-width: 450px;
-    margin-bottom: 30px;
+  @media screen and (min-width: $mobile) {
+    text-align: center;
+    & .item {
+      max-width: 450px;
+      @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+    & p {
+      text-align: start;
+    }
   }
-  & p {
-    text-align: start;
-  }
-
   @media screen and (min-width: $tablet) {
-    width: $tablet;
+    min-width: $tablet;
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (max-width: 1199px) {
+      margin: -15px;
+    }
+
+    & .item {
+      width: calc((100% - 4 * 15px) / 2);
+      @media screen and (max-width: 1199px) {
+        margin: 15px;
+      }
+    }
   }
 
   @media screen and (min-width: $desktop) {
-    display: flex;
+    max-width: 100%;
+    flex-wrap: nowrap;
     & .item + .item {
       margin-left: 30px;
     }
     & .item {
-      min-width: 270px;
+      max-width: 270px;
     }
   }
 }
@@ -94,11 +112,11 @@
   width: 100%;
 
   @media screen and (min-width: $tablet) {
-    max-width: 354px;
+    min-width: 354px;
   }
 
   @media screen and (min-width: $desktop) {
-    max-width: 270px;
+    min-width: 270px;
   }
   background-color: $secondaryBgColor;
   border-radius: $mainBorderRadius;
@@ -117,6 +135,13 @@
   margin: 0px;
   color: $primaryTextColor;
   line-height: 1.71;
+  @media screen and (min-width: $tablet) {
+    max-width: 354px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 270px;
+  }
 }
 
 /*Стили Направления разработки*/
@@ -160,6 +185,14 @@
   @media screen and (min-width: $tablet) {
     display: flex;
   }
+  @media screen and (min-width: $tablet) {
+    min-width: $tablet;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: 1199px) {
+    margin: -15px;
+  }
 }
 
 .member {
@@ -172,11 +205,14 @@
   }
 
   @media screen and (min-width: $tablet) {
-    min-width: 354px;
+    width: calc((100% - 4 * 15px) / 2);
+  }
+  @media screen and (max-width: 1199px) {
+    margin: 15px;
   }
 
   @media screen and (min-width: $desktop) {
-    min-width: 270px;
+    width: 270px;
     .team-list & + & {
       margin-left: 30px;
     }
@@ -209,6 +245,8 @@
   text-align: center;
 }
 .team-photo {
+  width: 100%;
+  height: auto;
   display: block;
   margin-bottom: 30px;
 
@@ -228,7 +266,7 @@
   flex-wrap: wrap;
   margin: -15px;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1199px) {
     & .client-tittle {
       width: calc((100% - 4 * 15px) / 2);
       margin: 15px;
@@ -236,45 +274,52 @@
   }
 
   @media screen and (min-width: $tablet) {
-    min-width: 354px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    justify-content: space-between;
+    max-width: $tablet;
     & .client-tittle {
-      margin-left: 30px;
+      width: calc((100% - 6 * 15px) / 3);
     }
   }
-}
 
-.client-link {
-  display: flex;
-  justify-content: center;
-  max-width: 210px;
-
-  color: #afb1b8;
-  border: 1px solid #afb1b8;
-  box-sizing: border-box;
-  border-radius: $mainBorderRadius;
-  height: 90px;
-
-  @media screen and (min-width: $tablet) {
-    min-width: 226px;
-  }
   @media screen and (min-width: $desktop) {
-    min-width: 170px;
+    max-width: $desktop;
+    flex-wrap: nowrap;
+    margin: 0;
+    justify-content: space-between;
+    & .client-tittle:not(:last-child) {
+      width: calc((100% - 150px) / 6);
+      margin-right: 30px;
+    }
   }
 
-  transition: border-color $mainTransition, color $mainTransition;
+  .client-link {
+    display: flex;
+    justify-content: center;
+    max-width: 210px;
 
-  &:hover,
-  &:focus {
-    border-color: $primaryHoverColor;
-    color: $primaryHoverColor;
-    outline: none;
+    color: #afb1b8;
+    border: 1px solid #afb1b8;
+    box-sizing: border-box;
+    border-radius: $mainBorderRadius;
+    height: 90px;
+
+    @media screen and (min-width: $tablet) {
+      min-width: 226px;
+    }
+    @media screen and (min-width: $desktop) {
+      min-width: 170px;
+    }
+
+    transition: border-color $mainTransition, color $mainTransition;
+
+    &:hover,
+    &:focus {
+      border-color: $primaryHoverColor;
+      color: $primaryHoverColor;
+      outline: none;
+    }
   }
-}
-.client-icon {
-  margin: auto;
-  fill: currentColor;
+  .client-icon {
+    margin: auto;
+    fill: currentColor;
+  }
 }

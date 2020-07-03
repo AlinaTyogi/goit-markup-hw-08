@@ -7,7 +7,16 @@
 }
 
 .header-flex {
-  @extend .container;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: $desktop) {
+  }
 
   padding-top: 0px;
   padding-bottom: 0px;
@@ -79,10 +88,12 @@
 
     &.is-open {
       display: block;
-      .hero {
-        display: none;
-      }
     }
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -93,34 +104,48 @@
   text-align: center;
   @media screen and (min-width: $tablet) {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-bottom: auto;
   }
-
   @media screen and (min-width: $desktop) {
-    display: flex;
+    margin-right: 180px;
   }
 }
 .menu-item {
   @media screen and (max-width: 767px) {
+    text-align: center;
     &:not(:last-child) {
       margin-bottom: 40px;
     }
   }
-  @media screen and (max-width: 1199) {
-    .menu-list &:not(:last-child) {
-      margin-right: 50px;
-    }
+  @media screen and (min-width: $tablet) {
+    position: relative;
+
+    margin-right: 50px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .menu-list &:not(:last-child) {
+    margin-bottom: 0px;
   }
 }
 
 .menu-link {
   display: inline-block;
-  position: relative;
+
   color: $secondaryTextColor;
   font-size: 18px;
   line-height: 1.17;
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.02em;
+
+  @media screen and (max-width: 767px) {
+    position: relative;
+  }
 
   @media screen and (min-width: $tablet) {
     font-size: $mainFontSize;
@@ -146,6 +171,9 @@
     display: block;
     bottom: -50%;
     left: 0;
+    @media screen and (min-width: $tablet) {
+      bottom: 0;
+    }
 
     width: 100%;
     height: 4px;
@@ -156,10 +184,11 @@
 }
 
 .menu-contacts {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1199px) {
     display: flex;
     flex-direction: column;
     max-width: 100vw;
+    margin-left: 34px;
     & .contact-item:not(:last-child) {
       margin-bottom: 16px;
     }
@@ -186,7 +215,7 @@
 
   @media screen and (min-width: $tablet) {
     display: flex;
-    flex-direction: column;
+
     align-items: center;
     margin-bottom: 0px;
     font-size: 12px;
