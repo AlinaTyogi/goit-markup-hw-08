@@ -228,8 +228,12 @@
           <ul class="services-list">
             <li class="item">
               <img
+                srcset="
+                  ./images/Operation/desktop-apps-370.jpg 1x,
+                  .images/Operation/desktop-apps-2x.jpg   2x
+                "
                 class="service-photo"
-                src="./images/Operation/desktop-apps.jpg"
+                src="./images/Operation/desktop-apps-370.jpg"
                 alt="Картинка Рабочего стола компьютера"
                 width="370"
                 height="294"
@@ -238,8 +242,12 @@
             </li>
             <li class="item">
               <img
+                srcset="
+                  ./images/Operation/mobile-apps-370.jpg 1x,
+                  .images/Operation/mobile-apps-2x.jpg   2x
+                "
                 class="service-photo"
-                src="./images/Operation/mobile-apps.jpg"
+                src="./images/Operation/mobile-apps-370.jpg"
                 alt="Картинка экрана мобильного телефона"
                 width="370"
                 height="294"
@@ -248,8 +256,12 @@
             </li>
             <li class="item">
               <img
+                srcset="
+                  ./images/Operation/design-apps-370.jpg 1x,
+                  .images/Operation/design-apps-2x.jpg   2x
+                "
                 class="service-photo"
-                src="./images/Operation/design-apps.jpg"
+                src="./images/Operation/design-apps-370.jpg"
                 alt="Картинка Дизайнерских решений"
                 width="370"
                 height="294"
@@ -266,17 +278,24 @@
           <h2>Наша команда</h2>
           <ul class="team-list">
             <li class="member">
-              <img
-                class="team-photo"
-                srcset="
-                  ./images/Photo_Contacts/john-smith.jpg 1x,
-                  ./images/Photo_Contacts/john-smith.jpg 2x
-                "
-                src="./images/Photo_Contacts/john-smith.jpg"
-                alt="Фото Джон Смит"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="./images/Photo_Contacts/john-smith-270.jpg"
+                  media="(min-width: 1200px)"
+                />
+
+                <img
+                  class="team-photo"
+                  srcset="
+                    ./images/Photo_Contacts/john-smith-450.jpg 1x,
+                    ./images/Photo_Contacts/john-smith-2x.jpg  2x
+                  "
+                  src="./images/Photo_Contacts/john-smith-450.jpg"
+                  alt="Фото Николай Кучеренко"
+                  width="450"
+                  height="320"
+                />
+              </picture>
               <h3>Николай Кучеренко</h3>
               <p>Product Designer</p>
               <ul class="socials-list">
@@ -335,13 +354,24 @@
               </ul>
             </li>
             <li class="member">
-              <img
-                class="team-photo"
-                src="./images/Photo_Contacts/marta-stewart.jpg"
-                alt="Фото Марта Стюарт"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="./images/Photo_Contacts/marta-stewart-270.jpg"
+                  media="(min-width: 1200px)"
+                />
+
+                <img
+                  class="team-photo"
+                  srcset="
+                    ./images/Photo_Contacts/marta-stewart-450.jpg 1x,
+                    ./images/Photo_Contacts/marta-stewart-2x.jpg  2x
+                  "
+                  src="./images/Photo_Contacts/marta-stewart-450.jpg"
+                  alt="Фото Ольга Иванова"
+                  width="450"
+                  height="320"
+                />
+              </picture>
               <h3>Ольга Иванова</h3>
               <p>Frontend Developer</p>
               <ul class="socials-list">
@@ -400,13 +430,24 @@
               </ul>
             </li>
             <li class="member">
-              <img
-                class="team-photo"
-                src="./images/Photo_Contacts/robert-jakis.jpg"
-                alt="Фото Роберт Якис"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="./images/Photo_Contacts/robert-jakis-270.jpg"
+                  media="(min-width: 1200px)"
+                />
+
+                <img
+                  class="team-photo"
+                  srcset="
+                    ./images/Photo_Contacts/robert-jakis-450.jpg 1x,
+                    ./images/Photo_Contacts/robert-jakis-2x.jpg  2x
+                  "
+                  src="./images/Photo_Contacts/robert-jakis-450.jpg"
+                  alt="Фото Ольга Иванова"
+                  width="450"
+                  height="320"
+                />
+              </picture>
               <h3>Андрей Шевченко</h3>
               <p>Marketing</p>
               <ul class="socials-list">
@@ -465,13 +506,24 @@
               </ul>
             </li>
             <li class="member">
-              <img
-                class="team-photo"
-                src="./images/Photo_Contacts/martin-doe.jpg"
-                alt="Фото Мартин Дое"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="./images/Photo_Contacts/martin-doe-270.jpg"
+                  media="(min-width: 1200px)"
+                />
+
+                <img
+                  class="team-photo"
+                  srcset="
+                    ./images/Photo_Contacts/martin-doe-450.jpg 1x,
+                    ./images/Photo_Contacts/martin-doe-2x.jpg  2x
+                  "
+                  src="./images/Photo_Contacts/martin-doe-450.jpg"
+                  alt="Фото Иван Николаев"
+                  width="450"
+                  height="320"
+                />
+              </picture>
               <h3>Иван Николаев</h3>
               <p>UI Designer</p>
               <ul class="socials-list">
